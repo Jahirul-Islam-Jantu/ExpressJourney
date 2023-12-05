@@ -9,9 +9,18 @@ app.use(express.urlencoded({ extended: true })); //middleware
 app.use(express.json()); //middleware
 
 app.get("/", (req, res) => {
-  req.json({
+  res.json({
     message: "i am root route",
   });
 }); //root route
 
-mongoose.connect("mongodb://127.0.0.1:27017/test");
+mongoose
+  .connect("mongodb://127.0.0.1:27017/test")
+  .then(() => {
+    app.listen(4545, () => {
+      console.log("app is ready to serve on port 4545");
+    });
+  })
+  .catch((e) => {
+    console.log(e);
+  });
