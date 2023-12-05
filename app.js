@@ -11,9 +11,7 @@ app.use(express.urlencoded({ extended: true })); //middleware
 app.use(express.json()); //middleware
 
 app.get("/", (req, res) => {
-  res.json({
-    message: "i am root route",
-  });
+  res.render("home");
 }); //root route
 
 mongoose
