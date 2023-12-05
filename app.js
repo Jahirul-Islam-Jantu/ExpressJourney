@@ -11,6 +11,10 @@ app.use(express.urlencoded({ extended: true })); //middleware
 app.use(express.json()); //middleware
 
 app.get("/", (req, res) => {
+  res.render("create");
+});
+
+app.get("/", (req, res) => {
   res.render("home");
 }); //root route
 
