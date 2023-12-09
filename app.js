@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 
 const app = express(); //we create a app using express function call
+const pollController = require("./pollController");
 
 app.set("view engine", "ejs");
 
@@ -10,12 +11,11 @@ app.use(morgan("dev")); //this command is used mainly for use middleware in app
 app.use(express.urlencoded({ extended: true })); //middleware
 app.use(express.json()); //middleware
 
+
+app.get("/create", pollController.createPollGetController);
+app.post("/create", pollController.createPollPostController);
 app.get("/", (req, res) => {
   res.render("create");
-});
-
-app.get("/", (req, res) => {
-  res.render("home");
 }); //root route
 
 mongoose
