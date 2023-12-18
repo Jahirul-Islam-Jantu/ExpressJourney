@@ -1,4 +1,4 @@
-const poll = require("./poll");
+const Poll = require("./poll");
 
 exports.createPollGetController = (req, res, next) => {
   res.render("create");
@@ -6,14 +6,15 @@ exports.createPollGetController = (req, res, next) => {
 
 exports.createPollPostController = async (req, res, next) => {
   let { title, description, options } = req.body;
+
   options = options.map((opt) => {
-    let obj = {
+    return {
       name: opt,
       vote: 0,
     };
   });
 
-  let poll = new poll({
+  let poll = new Poll({
     title,
     description,
     options,

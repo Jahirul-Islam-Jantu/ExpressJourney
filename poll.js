@@ -23,5 +23,5 @@ const pollSchema = new Schema({
   ],
 });
 
-const Poll = model("Poll", pollSchema);
-module.exports = Poll;
+const poll = model("poll", pollSchema);
+module.exports = poll;

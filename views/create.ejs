@@ -44,7 +44,7 @@
                 <div class="form-group">
                   <input
                     type="text"
-                    name="option1"
+                    name="options"
                     class="form-control"
                     placeholder="Option 1"
                   />
@@ -52,9 +52,25 @@
                 <div class="form-group">
                   <input
                     type="text"
-                    name="option2"
-                    class="form-control"
+                    name="options"
+                    class="form-control my-3"
                     placeholder="Option 2"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="options"
+                    class="form-control my-3"
+                    placeholder="Option 3"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="options"
+                    class="form-control my-3"
+                    placeholder="Option 4"
                   />
                 </div>
               </div>
@@ -68,7 +84,7 @@
               <input
                 type="submit"
                 value="Create Poll"
-                class="btn btn-primary btn-danger"
+                class="btn btn-primary btn-success"
               />
             </form>
           </div>
@@ -90,7 +106,7 @@
     <script>
       let option = document.getElementById("options");
       let addOption = document.getElementById("addOption");
-      let currentOptionNumber = 3;
+      let currentOptionNumber = 5;
 
       addOption.addEventListener("click", (e) => {
         e.preventDefault();
@@ -103,9 +119,9 @@
 
         let input = document.createElement("input");
         input.type = "text";
-        input.name = "option" + currentOptionNumber;
-        input.placeholder = "Option" + currentOptionNumber++;
-        input.className = "form-control";
+        input.name = "options";
+        input.placeholder = "Option " + currentOptionNumber++;
+        input.className = "form-control my-3";
 
         div.appendChild(input);
         return div;
