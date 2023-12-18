@@ -15,6 +15,8 @@ app.use(express.json()); //middleware
 app.get("/create", pollController.createPollGetController);
 app.post("/create", pollController.createPollPostController);
 
+app.get("/polls", pollController.getAllPolls);
+
 app.get("/", (req, res) => {
   res.render("home");
 }); //root route
